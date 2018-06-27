@@ -14,10 +14,10 @@ postsCollection: AngularFirestoreCollection<Post>;
       ref.orderBy('published', 'desc')
     );
   }
-  getPosts(): Observable<Post> {
+  getPosts(): Observable<any> {
    return this.postsCollection.snapshotChanges().pipe(
        map(actions => actions.map(a => {
-         const data = a.payload.doc.data() as Post;
+         const data = a.payload.doc.data() ;
          const id = a.payload.doc.id;
          return { id, ...data };
        }))
