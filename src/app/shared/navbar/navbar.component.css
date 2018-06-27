@@ -1,6 +1,9 @@
 .customNav{
   background-color: rgba(0, 0, 0, 0.07);
 }
+.customAnchor:hover{
+  color: blue;
+}
 .customSpan{
   color: black;
 }

@@ -1,3 +1,6 @@
-<p>
-  posts-list works!
-</p>
+<ul class="list-group" *ngFor="let arr of posts">
+  <div class="card card-body">
+    <h5 class="customHeader" routerLink="{{arr.id}}">{{arr.title}}</h5>
+    <div>{{arr.content}}</div>
+  </div>
+</ul>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-posts-detail',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostsDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(private act: ActivatedRoute) { }
 
   ngOnInit() {
   }
