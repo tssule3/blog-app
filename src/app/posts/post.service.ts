@@ -4,23 +4,29 @@ import {AngularFirestore, AngularFirestoreCollection,
 import {Post} from './post';
 import {map} from 'rxjs/operators';
 import {Observable} from 'rxjs';
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class PostService {
-postsCollection: AngularFirestoreCollection<Post>;
+  postsCollection: AngularFirestoreCollection<Post>;
+  postsDoc: AngularFirestoreDocument<Post>;
+
   constructor(private afs: AngularFirestore) {
     this.postsCollection = this.afs.collection('posts', ref =>
       ref.orderBy('published', 'desc')
     );
   }
+
   getPosts(): Observable<any> {
-   return this.postsCollection.snapshotChanges().pipe(
-       map(actions => actions.map(a => {
-         const data = a.payload.doc.data() ;
-         const id = a.payload.doc.id;
-         return { id, ...data };
-       }))
-   );
+    return this.postsCollection.snapshotChanges().pipe(
+      map(actions => actions.map(a => {
+        const data = a.payload.doc.data();
+        const id = a.payload.doc.id;
+        return {id, ...data};
+      }))
+    );
+  }
+
+  getPostsDoc(id) {
+    this.postsDoc = this.afs.doc<Post>(`posts/${id}`);
+    return this.postsDoc.valueChanges();
   }
 }

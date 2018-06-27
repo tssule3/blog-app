@@ -5,6 +5,7 @@ import { PostsDetailComponent } from './posts-detail/posts-detail.component';
 import { PostsListComponent } from './posts-list/posts-list.component';
 import {SharedModule} from '../shared/shared.module';
 import {RouterModule, Routes} from '@angular/router';
+import {PostService} from './post.service';
 const routes: Routes = [
   {path: 'blog', component: PostsListComponent },
   {path: 'blog/:id', component: PostsDetailComponent},
@@ -16,6 +17,7 @@ const routes: Routes = [
     SharedModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [PostsDashboardComponent, PostsDetailComponent, PostsListComponent]
+  declarations: [PostsDashboardComponent, PostsDetailComponent, PostsListComponent],
+  providers: [PostService]
 })
 export class PostsModule { }
