@@ -1,0 +1,19 @@
+.customNav{
+  background-color: rgba(0, 0, 0, 0.18);
+}
+.customSpan{
+  color: black;
+}
+.customBtn{
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  border: 0px;
+  width: 5em;
+  background-color: rgba(0, 0, 0, 0);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.customBtn:hover{
+  background-color: rgba(255, 255, 255, 0.53); /* Green */
+  color: white;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.35), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
