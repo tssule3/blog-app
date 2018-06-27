@@ -10,11 +10,11 @@
       showLogin">
         <!--<span class="customSpan">Hello {{user.displayName}}</span> &nbsp;-->
         <button class="btn btn-primary customBtn" routerLink="/dashboard">Write A Post</button> &nbsp;
-        <a class="btn btn-light customBtn" (click)="auth.logOut()">Log Out </a>
+        <a class="btn btn-light customBtn" (click)="logout()">Log Out </a>
       </li>
       <li class="nav-item">
         <ng-template  #showLogin>
-          <a class="btn btn-light customBtn" (click)="auth.logIn()">Log In</a>
+          <a class="btn btn-light customBtn" (click)="login()">Log In</a>
         </ng-template>
       </li>
     </ul>

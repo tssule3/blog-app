@@ -14,7 +14,7 @@ export class AuthService {
     //   console.log('logged in!');
     // });
     this.afAuth.auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider()).
-    then(() => {console.log('logged in!');});
+    then(() => {console.log('Logged In!'); });
   }
   logOut() {
     this.afAuth.auth.signOut().then(
